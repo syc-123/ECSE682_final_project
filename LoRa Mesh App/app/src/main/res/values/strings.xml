@@ -1,0 +1,40 @@
+<!--
+ Copyright 2020 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<resources>
+    <string name="app_name">Map With Marker</string>
+    <string name="title_activity_maps">Map with Marker</string>
+    <string-array name="devices">
+        <item>Device 1 Data</item>
+        <item>Device 2 Data</item>
+        <item>Device 3 Data</item>
+        <item>Device 4 Data</item>
+        <item>Device 5 Data</item>
+        <item>Device 6 Data</item>
+        <item>Device 7 Data</item>
+        <item>Device 8 Data</item>
+        <item>Device 9 Data</item>
+        <item>Device 10 Data</item>
+        <item>Device 11 Data</item>
+        <item>Device 12 Data</item>
+        <item>Device 13 Data</item>
+        <item>Device 14 Data</item>
+        <item>Device 15 Data</item>
+        <item>Device 16 Data</item>
+        <item>Device 17 Data</item>
+        <item>Device 18 Data</item>
+    </string-array>
+</resources>
