@@ -15,8 +15,8 @@
 -->
 
 <resources>
-    <string name="app_name">Map With Marker</string>
-    <string name="title_activity_maps">Map with Marker</string>
+    <string name="app_name">LoRa Mesh App</string>
+    <string name="title_activity_maps">LoRa Mesh App</string>
     <string-array name="devices">
         <item>Device 1 Data</item>
         <item>Device 2 Data</item>
