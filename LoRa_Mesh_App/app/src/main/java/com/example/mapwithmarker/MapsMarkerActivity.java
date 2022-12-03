@@ -96,13 +96,13 @@ public class MapsMarkerActivity extends AppCompatActivity
         Marker markerMc = googleMap.addMarker(new MarkerOptions()
                 .position(McConnell)
                 .title("McConnell Engineering Building")
-                .snippet("Some basic info \n Click for more info"));
+                .snippet("LoRa Mesh Node 1"));
 
         LatLng YUL = new LatLng(45.49457773520816, -73.57384545605059);
         Marker markerY = googleMap.addMarker(new MarkerOptions()
                 .position(YUL)
                 .title("YUL")
-                .snippet("Some basic info \n Click for more info"));
+                .snippet("LoRa Mesh Node 2"));
 
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(McConnell, (float)14.5));
 

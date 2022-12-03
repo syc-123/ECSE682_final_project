@@ -88,8 +88,17 @@ public class NodeDataActivity extends AppCompatActivity {
         Log.d("debug", String.format("data to show on view: %s",data));
         int id = (data.charAt(0)-'0')*10+(data.charAt(1)-'0');
         Log.d("debug",String.format("id:%d",id));
-        listItem.set(3*(id-1),data);
+
+        int t = (data.charAt(3)-'0')*1000+(data.charAt(4)-'0')*100+(data.charAt(5)-'0')*10+(data.charAt(6)-'0');
+        int p = (data.charAt(8)-'0')*1000+(data.charAt(9)-'0')*100+(data.charAt(10)-'0')*10+(data.charAt(11)-'0');
+        int h = (data.charAt(13)-'0')*1000+(data.charAt(14)-'0')*100+(data.charAt(15)-'0')*10+(data.charAt(16)-'0');
+
+        listItem.set(3*(id-1),String.format("Node "+id+" Temperature: %.2f C",(float)t/100));
+        listItem.set(3*(id-1)+1,String.format("Node "+id+" Humidity: %.2f %%",(float)h/100));
+        listItem.set(3*(id-1)+2,String.format("Node "+id+" Air pressure: %.2f hPa",(float)p/10));
         adapter.notifyDataSetChanged();
+//        }
+
     }
 
 
@@ -100,9 +109,9 @@ public class NodeDataActivity extends AppCompatActivity {
         setContentView(R.layout.activity_node_data_alt);
 
         for(int k=1;k<5;k++){
-            listItem.add("Node "+k+" Temperature");
-            listItem.add("Node "+k+" Humidity");
-            listItem.add("Node "+k+" Air pressure");
+            listItem.add("Node "+k+" Temperature:");
+            listItem.add("Node "+k+" Humidity:");
+            listItem.add("Node "+k+" Air pressure:");
         }
 
         listView=(ListView)findViewById(R.id.listView);
