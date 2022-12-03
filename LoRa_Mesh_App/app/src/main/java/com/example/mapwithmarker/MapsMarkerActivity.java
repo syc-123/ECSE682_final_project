@@ -14,12 +14,14 @@
 
 package com.example.mapwithmarker;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -49,6 +51,13 @@ public class MapsMarkerActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         // Retrieve the content view that renders the map.
         setContentView(R.layout.activity_maps);
+
+        ActivityCompat.requestPermissions(this,new String[] { Manifest.permission.BLUETOOTH_SCAN },
+                1);
+        ActivityCompat.requestPermissions(this,new String[] { Manifest.permission.BLUETOOTH_CONNECT },
+                1);
+        ActivityCompat.requestPermissions(this,new String[] { Manifest.permission.ACCESS_BACKGROUND_LOCATION },
+                1);
 
         // Get the SupportMapFragment and request notification when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()

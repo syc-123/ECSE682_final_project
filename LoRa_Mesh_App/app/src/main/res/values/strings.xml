@@ -17,24 +17,4 @@
 <resources>
     <string name="app_name">LoRa Mesh App</string>
     <string name="title_activity_maps">LoRa Mesh App</string>
-    <string-array name="devices">
-        <item>Device 1 Data</item>
-        <item>Device 2 Data</item>
-        <item>Device 3 Data</item>
-        <item>Device 4 Data</item>
-        <item>Device 5 Data</item>
-        <item>Device 6 Data</item>
-        <item>Device 7 Data</item>
-        <item>Device 8 Data</item>
-        <item>Device 9 Data</item>
-        <item>Device 10 Data</item>
-        <item>Device 11 Data</item>
-        <item>Device 12 Data</item>
-        <item>Device 13 Data</item>
-        <item>Device 14 Data</item>
-        <item>Device 15 Data</item>
-        <item>Device 16 Data</item>
-        <item>Device 17 Data</item>
-        <item>Device 18 Data</item>
-    </string-array>
 </resources>
