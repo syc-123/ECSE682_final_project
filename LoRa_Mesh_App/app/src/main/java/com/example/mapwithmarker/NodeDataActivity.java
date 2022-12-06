@@ -86,17 +86,27 @@ public class NodeDataActivity extends AppCompatActivity {
     private void updateViews(Intent intent){
         data = intent.getStringExtra("data_content");
         Log.d("debug", String.format("data to show on view: %s",data));
+        if(data.length()<17){
+            return;
+        }
         int id = (data.charAt(0)-'0')*10+(data.charAt(1)-'0');
         Log.d("debug",String.format("id:%d",id));
+        if(0<id && id<5){
+            if(data.charAt(2)=='T'){
+                int t = (data.charAt(3)-'0')*1000+(data.charAt(4)-'0')*100+(data.charAt(5)-'0')*10+(data.charAt(6)-'0');
+                listItem.set(3*(id-1),String.format("Node "+id+" Temperature: %.2f C",(float)t/100));
+            }
+            if(data.charAt(7)=='P'){
+                int p = (data.charAt(8)-'0')*1000+(data.charAt(9)-'0')*100+(data.charAt(10)-'0')*10+(data.charAt(11)-'0');
+                listItem.set(3*(id-1)+2,String.format("Node "+id+" Air pressure: %.2f kPa",(float)p/10));
+            }
+            if(data.charAt(12)=='H'){
+                int h = (data.charAt(13)-'0')*1000+(data.charAt(14)-'0')*100+(data.charAt(15)-'0')*10+(data.charAt(16)-'0');
+                listItem.set(3*(id-1)+1,String.format("Node "+id+" Humidity: %.2f %%",(float)h/100));
+            }
+            adapter.notifyDataSetChanged();
+            }
 
-        int t = (data.charAt(3)-'0')*1000+(data.charAt(4)-'0')*100+(data.charAt(5)-'0')*10+(data.charAt(6)-'0');
-        int p = (data.charAt(8)-'0')*1000+(data.charAt(9)-'0')*100+(data.charAt(10)-'0')*10+(data.charAt(11)-'0');
-        int h = (data.charAt(13)-'0')*1000+(data.charAt(14)-'0')*100+(data.charAt(15)-'0')*10+(data.charAt(16)-'0');
-
-        listItem.set(3*(id-1),String.format("Node "+id+" Temperature: %.2f C",(float)t/100));
-        listItem.set(3*(id-1)+1,String.format("Node "+id+" Humidity: %.2f %%",(float)h/100));
-        listItem.set(3*(id-1)+2,String.format("Node "+id+" Air pressure: %.2f hPa",(float)p/10));
-        adapter.notifyDataSetChanged();
 //        }
 
     }

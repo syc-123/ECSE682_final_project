@@ -92,6 +92,9 @@ public class InfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
+        ActivityCompat.requestPermissions(this,new String[] { Manifest.permission.BLUETOOTH_CONNECT },
+                1);
+
         this.bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         this.bluetoothLeScanner = bluetoothAdapter.getBluetoothLeScanner();
         this.mHandler = new Handler();
@@ -164,7 +167,7 @@ public class InfoActivity extends AppCompatActivity {
             ScanFilter filterName5 = new ScanFilter.Builder().setDeviceName("LoRa Mesh Node 4").build();
             filters.add(filterName5);
 
-            ScanSettings settings = new ScanSettings.Builder().setScanMode(ScanSettings.SCAN_MODE_LOW_POWER).setCallbackType(ScanSettings.CALLBACK_TYPE_ALL_MATCHES).setReportDelay(50).build();
+            ScanSettings settings = new ScanSettings.Builder().setScanMode(ScanSettings.SCAN_MODE_LOW_POWER).setCallbackType(ScanSettings.CALLBACK_TYPE_ALL_MATCHES).setReportDelay(1000).build();
 
             Log.d("debug", "start");
 
